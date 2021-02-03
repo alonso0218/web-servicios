@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+    
+{% extends "proyectowebapp/base.html" %}
+
+<!--le indicamos que carge los archivos staticos-->
+{%load static%}
+<!--le idicamos que este es el contenido que va a cambiar-->
+    
+{%block content%}
+<div class = "contenedorformulario">
+
+    {% if "enviado" in request.GET %}
+    <p style="color:beige">informacion enviada , en breve nos contactaremos con usted , gracias</p>
+    {%endif%}
+
+    <form action=""method="POST" style="text-align:center;"> 
+     {% csrf_token %}
+     <table style='color:white; margin: 20px auto;'>{{ formulario.as_table }} </table>
+     <input type="submit" value="ENVIAR" style="width: 150px;">
+     
+    </form>
+ 
+
+</div>  
+{%endblock%}
