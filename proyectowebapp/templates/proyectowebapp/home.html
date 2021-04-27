@@ -2,47 +2,63 @@
 {% extends "proyectowebapp/base.html" %}
 
 <!--le indicamos que carge los archivos staticos-->
-{%load static%}
+{% load static %}
 <!--le idicamos que este es el contenido que va a cambiar-->
 
-{%block content%}
+{% block content %}
 
 
-   <!-- Heading -->
-   <section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectowebapp/img/principal.jpg'%}" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4" >
-            <span class="section-heading-upper">Puntualidad</span>
-            <span class="section-heading-lower">El mejor stock</span>
+<!-- Heading -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro ">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectowebapp/img/autos.jpg'%} " alt=""style='witdh:100%'>
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4 ">
+          <span class="section-heading-upper">Distincion</span>
+          <span class="section-heading-lowwer">El mejor stock</span>
+        </h2>
+        <p class="mb-3">Los mejores autos de alta gama del mercado.Elegancia y confort en un auto
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+</section> <!-- Message -->
+ <section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Compromiso y discresion total</span>
+            <span class="section-heading-lower">Garantizado</span>
           </h2>
-          <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
-          </p>
-         
+          <p class="mb-0">Con más de 75 años de experiencia en venta de autos con mas de 10 expertos que te asesoraran
+            en el la mejor eleccion con un respaldo profesional.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
+ </section>
+<div class="sticky-container">
+  <ul class="sticky">
+    <li>
+      <img src="{% static 'proyectowebapp/img/logotipo-circular-de-facebook.png'%}" width="32" height="32">
+      <p><a href="https://www.facebook.com" target="_blank">unete<br>Facebook</a></p>
+    </li>
+    <li>
+      <img src="{% static 'proyectowebapp/img/twitter.png'%}" width="32" height="32">
+      <p><a href="https://twitter.com" target="_blank">siguenos<br>Twitter</a></p>
+    </li>
+    <li>
+      <img src="{% static 'proyectowebapp/img/instagram.png'%}" width="32" height="32">
+      <p><a href="http://www.youtube.com" target="_blank">Subscribete<br>YouYube</a></p>
+    </li>
 
-  
-    <!-- Message -->
-    <section class="page-section cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Compromiso total</span>
-                <span class="section-heading-lower">Garantizado</span>
-              </h2>
-              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  </ul>
+</div>
 
-  {%endblock%}
+{% endblock %}

@@ -17,12 +17,12 @@
 <div class = "contenedorformulario">
 
     {% if "enviado" in request.GET %}
-    <p style="color:beige">informacion enviada , en breve nos contactaremos con usted , gracias</p>
+    <p style="color:rgb(255, 255, 255)">informacion enviada , en breve nos contactaremos con usted , gracias</p>
     {%endif%}
 
     <form action=""method="POST" style="text-align:center;"> 
      {% csrf_token %}
-     <table style='color:white; margin: 20px auto;'>{{ formulario.as_table }} </table>
+     <table style='color:white; margin: 20px auto;background:rgb(3, 3,-3)'>{{ formulario.as_table }} </table>
      <input type="submit" value="ENVIAR" style="width: 150px;">
      
     </form>

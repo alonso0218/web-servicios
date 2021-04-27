@@ -8,8 +8,6 @@ from django.core.mail import EmailMessage
 
 def contacto (request):
     formulario=Formulario
-
-
     if request.method =="POST":
         formulario_contacto=formulario(data=request.POST)#CON ESTE METODO RESCATAOS LA INFORMACION DEL INGRESADA EN EL FORMULARIO por medio del metdo post
         if formulario_contacto.is_valid():

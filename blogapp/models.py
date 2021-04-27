@@ -31,3 +31,5 @@ class Post(models.Model):
        verbose_name ='post'
        verbose_name_plural ='posts'
 
+    def __str__(self):
+        return self.titulo

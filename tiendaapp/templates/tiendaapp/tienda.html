@@ -1,0 +1,40 @@
+{% extends "proyectowebapp/base.html" %}
+<!--le indicamos que carge los archivos staticos-->
+{% load static %}
+<!--le idicamos que este es el contenido que va a cambiar-->
+
+
+{% block content %}
+<div class='container' >
+  <div style="float:right;">
+    <p style='color:red'>texto de prueba</p>
+  </div>
+
+</div>
+
+<div class='container'>
+  <div class='row'>
+   {% for producto in productos %}
+
+     <div class='col md-4 col-4'>
+       <div class="card" style='background:rgb(11, -5, -05)100%;margin:10px 10px'>
+        {% if producto.imagen %}
+          <img src="{{producto.imagen.url}}" class="card-img-top">
+        {% endif %}
+           <div class='card-body' style='text-align:center;color:rgb(255, 255, 255)'>
+              <h6 class='card-title'>{{producto.nombre}}</h6> 
+              <p class='card-text'>{{producto.precio}}&nbsp;$</p>
+           </div>  
+           <div class ='cart-footer text-center'>
+               <a href="" class= 'btn btn-success'>Agregar Compra</a>
+           </div>
+       </div>
+     </div>
+
+   {% endfor %}
+
+ </div>
+
+</div>
+
+{% endblock %}

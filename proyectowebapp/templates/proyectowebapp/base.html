@@ -1,41 +1,41 @@
-<html>
+<!DOCTYPE html>
 
 <head>
 
+  {% load static %}
+
+  <!-- Bootstrap -->
+  <link href="{% static 'proyectowebapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 
-    {% load static %}
-
-    <!-- Bootstrap -->
-    <link href="{% static 'proyectowebapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-     <!-- Fonts -->
-    
-     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
-     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-     
-
-    <!-- Styles -->
-    <link href="{% static 'proyectowebapp/css/gestion.css'%}" rel="stylesheet">
+  <!-- Styles -->
+  <link href="{% static 'proyectowebapp/css/gestion.css'%}" rel="stylesheet">
 </head>
 
 <body>
-
+  
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      
-        <span class="site-heading-lower">Gestión de Pedidos</span>
-      </h1>
+       <span class="site-heading-lower">Autos Monaco</span>
+    </h1>
 
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home'%}">Gestión de Pedidos</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home'%}">Autos
+        Monaco</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto"><!--agregamos if request.path para resaltar los menus cuando se visitan-->
+        <ul class="navbar-nav mx-auto">
+          <!--agregamos if request.path para resaltar los menus cuando se visitan-->
           <li class="nav-item {% if request.path == '/' %}active {% endif %}  px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'home'%}">Inicio</a>
           </li>
@@ -48,58 +48,54 @@
           <li class="nav-item {% if request.path == '/contacto/' %} active {% endif %}px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'contacto'%}">Contacto</a>
           </li>
-          <li class="nav-item{% if request.path|slice:':6' == '/blog/' %} active {% endif %}px-lg-4">
+          <li class="nav-item{% if request.path == '/blog/' %} active {% endif %}px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'blog'  %}">Blog</a>
           </li>
-         
+
         </ul>
       </div>
     </div>
-  </nav>
-<!--contenido cambiante de la pag base-->
+   </nav>
+   <!--contenido cambiante de la pag base-->
 
-{% block content %}
+   {% block content %}
 
 
-{% endblock %}
+   {% endblock %}
 
-    <!-- Footer -->
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	    </p>
-        <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
-		</p>
-        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
-      </div>
-	</footer>
+   <!-- Footer -->
+   <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0 mbt">
+        <a href="sample.html" class="link">Política de privacidad</a> ·
+        <a href="sample.html" class="link">Aviso legal</a> ·
+        <a href="sample.html" class="link">Cookies</a>
+      </p>
+      <p class="m-0 mbt1">&copy; Autos Monaco 2020</p>
+    </div>
+   </footer>
+   <div class="sticky-container">
+    <ul class="sticky" style='color:rgb(22, 24, 22) '>
+      <li>
+        <img src="{% static 'proyectowebapp/img/logotipo-circular-de-facebook.png'%}" width="32" height="32">
+        <p><a href="https://www.facebook.com" target="_blank">unete<br>Facebook</a></p>
+      </li>
+      <li>
+        <img src="{% static 'proyectowebapp/img/twitter.png'%}" width="32" height="32">
+        <p><a href="https://twitter.com" target="_blank">siguenos<br>Twitter</a></p>
+      </li>
+      <li>
+        <img src="{% static 'proyectowebapp/img/instagram.png'%}" width="32" height="32">
+        <p><a href="http://www.youtube.com" target="_blank">Subscribete<br>YouYube</a></p>
+      </li>
 
-    <!-- Bootstrap -->
-    <script src="{% static 'proyectowebapp/vendor/jquery/jquery.min.js'%}"></script>
-    <script src="{% static 'proyectowebapp/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    </ul>
+   </div>
+   <!-- Bootstrap -->
+   <script src="{% static 'proyectowebapp/vendor/jquery/jquery.min.js'%}"></script>
+   <script src="{% static 'proyectowebapp/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
-</body>
+ </body>
 
 
 </html>
